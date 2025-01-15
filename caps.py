@@ -19,7 +19,7 @@ def copy_to_clipboard():
     root.clipboard_append(output_text)
 
 root = ctk.CTk()
-root.title("CAPSIFY")
+root.title("CAPS")
 
 #fonts and colors
 font_style = ("Verdana", 12)
@@ -38,15 +38,8 @@ root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 root.columnconfigure(2, weight=1)
 
-# Create and customize widgets
-# entry = tk.Text(root, height=8, width=60, font=font_style, bg=ash_grey, fg=neon_green, padx=0, pady=0, wrap=tk.WORD, highlightbackground=ash_grey, highlightthickness=0)
-# entry.pack(pady=10)
-
 entry=ctk.CTkTextbox(root,height=300,width=600,wrap="word",fg_color="#101010",border_color="#ff0000",border_width=1)
 entry.grid(row=0,column=0,columnspan=3,sticky="nsew",pady=(10,5),padx=10)
-
-# convert_button = tk.Button(root, text="CAPSIFY", command=convert_to_uppercase, bg=neon_pink, fg=button_text_color, font=font_style, relief=tk.RAISED, bd=0, highlightthickness=0)
-# convert_button.pack(pady=5)
 
 uppercase_button=ctk.CTkButton(root,width=130,height=40,text="Upper Case",command=convert_to_uppercase,fg_color="#101010",border_color="#ff0000",border_width=1,hover_color="#990000")
 uppercase_button.grid(row=1,column=0,sticky="nsew",pady=5,padx=(10,2))
@@ -55,15 +48,7 @@ lowercase_button.grid(row=1,column=1,sticky="nsew",pady=5,padx=2)
 copy_button=ctk.CTkButton(root,width=130,height=40,text="Copy",command=copy_to_clipboard,fg_color="#101010",border_color="#ff0000",border_width=1,hover_color="#990000")
 copy_button.grid(row=1,column=2,sticky="nsew",pady=5,padx=(2,10))
 
-# result_text = tk.Text(root, height=8, width=60, font=font_style, bg=ash_grey, fg=neon_green, padx=0, pady=0, wrap=tk.WORD, highlightbackground=ash_grey, highlightthickness=0)
-# result_text.pack(pady=10)
-
 result_text=ctk.CTkTextbox(root,height=300,width=600,wrap="word",fg_color="#101010",border_color="#ff0000",border_width=1)
 result_text.grid(row=2,column=0,columnspan=3,sticky="nsew",pady=(5,10),padx=10)
-
-# copy_button = tk.Button(root, text="COPY", command=copy_to_clipboard, bg=neon_pink, fg=button_text_color, font=font_style, relief=tk.RAISED, bd=0, highlightthickness=0)
-# copy_button.pack(pady=5)
-
-
 
 root.mainloop()
